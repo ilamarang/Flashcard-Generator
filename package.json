@@ -1,0 +1,25 @@
+{
+  "name": "flashcardgenerator",
+  "version": "1.0.0",
+  "description": "Node.js CLI Program to work with FlashCards",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilamarang/Flashcard-Generator.git"
+  },
+  "keywords": [
+    "Node",
+    "Fun",
+    "Flash",
+    "Card"
+  ],
+  "author": "Ilamaran Gurunathan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ilamarang/Flashcard-Generator/issues"
+  },
+  "homepage": "https://github.com/ilamarang/Flashcard-Generator#readme"
+}
