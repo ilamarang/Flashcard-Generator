@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/ilamarang/Flashcard-Generator/issues"
   },
-  "homepage": "https://github.com/ilamarang/Flashcard-Generator#readme"
+  "homepage": "https://github.com/ilamarang/Flashcard-Generator#readme",
+  "dependencies": {
+    "inquirer": "^3.1.0"
+  }
 }
