@@ -27,5 +27,12 @@ clozeCardClozeQuestion: [{
     name: 'clozeCardClozeQuestion',
     message: 'Please enter the question ?',
     type: 'input'
+  }],
+continueQuestion: [{
+      name: 'userResponse',
+      message: 'Do you want to continue?',
+      type: 'list',
+      choices: ['Yes','No']
+      
   }]
 }

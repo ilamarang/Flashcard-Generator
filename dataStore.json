@@ -1,0 +1,47 @@
+[
+  {
+    "card": "Basic",
+    "firstQuestion": {
+      "clozeCardFullQuestion": "1"
+    },
+    "secondQuestion": {
+      "basicCardQuestionBack": "2"
+    }
+  },
+  {
+    "card": "Basic",
+    "firstQuestion": {
+      "clozeCardFullQuestion": "22"
+    },
+    "secondQuestion": {
+      "basicCardQuestionBack": "33"
+    }
+  },
+  {
+    "card": "Basic",
+    "firstQuestion": {
+      "clozeCardFullQuestion": "22"
+    },
+    "secondQuestion": {
+      "basicCardQuestionBack": "11"
+    }
+  },
+  {
+    "card": "Basic",
+    "firstQuestion": {
+      "clozeCardFullQuestion": "23"
+    },
+    "secondQuestion": {
+      "basicCardQuestionBack": "12"
+    }
+  },
+  {
+    "card": "Basic",
+    "firstQuestion": {
+      "clozeCardFullQuestion": "11"
+    },
+    "secondQuestion": {
+      "basicCardQuestionBack": "cutting"
+    }
+  }
+]

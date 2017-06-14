@@ -1,10 +1,9 @@
 var inquirer = require('inquirer');
 var fs = require('fs');
-var questions = require('./questions.js')
-var quitGame = false;
-var basicCard = require('./basicCard.js')
-var clozeCard = require('./clozeCard.js')
-
+var questions = require('./questions.js');
+var basicCard = require('./basicCard.js');
+var clozeCard = require('./clozeCard.js');
+var dataStore = require('./dataStore.json');
 
 var initialQuestions = function() {
       inquirer.prompt(questions.prompt.initialQuestions).then(function(answer) {
@@ -17,7 +16,7 @@ var initialQuestions = function() {
                     break;
                 default:
                     console.log('Poor Choice');
-                    quitGame = true;
+
             }
 
         }
@@ -33,6 +32,26 @@ var createCard = function(cardType,firstQuestion,secondQuestion,cardObject) {
     {
       //verify if the question and answer is related.
       var newCard = new cardObject(firstAnswer,secondAnswer);
+      dataStore.push({
+        card: cardType,
+        firstQuestion: firstAnswer,
+        secondQuestion: secondAnswer}
+      )
+      fs.writeFile('./dataStore.json',JSON.stringify(dataStore, null, 2),function(err) {
+        //Write error to Log Writer
+        if(err) {
+
+        }else {
+          inquirer.prompt(questions.prompt.continueQuestion).then(function(continueAnswer)
+          {
+            if(continueAnswer.userResponse==='Yes') {
+                createCard(cardType,firstQuestion,secondQuestion,cardObject);
+            } else {
+              return;
+            }
+          });
+        }
+      });
 
  })
 
