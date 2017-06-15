@@ -45,7 +45,7 @@ var initialQuestions = function() {
                 displayCard('Cloze');
                 break;
             default:
-                //Write the choice to Log Writer and exit the game
+                //Write the choice to console and exit the game
                 console.log('Thanks for Playing!');
                 return;
         }
@@ -139,6 +139,7 @@ var createCard = function(cardType, firstQuestion, secondQuestion, cardObject) {
                 } else {
                     inquirer.prompt(questions.prompt.continueQuestion).then(function(continueAnswer) {
                         if (continueAnswer.userResponse === 'Yes') {
+                            //Recursively call the same function after card is created.
                             createCard(cardType, firstQuestion, secondQuestion, cardObject);
                         } else {
                             initialQuestions();
