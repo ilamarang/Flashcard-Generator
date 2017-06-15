@@ -9,23 +9,23 @@ initialQuestions: [{
     ]
 }],
 basicCardFrontQuestion: [{
-    name: 'basicCardQuestionFront',
+    name: 'firstInputAnswer',
     message: 'what do you want on the front of the card ?',
     type: 'input'
   }],
 basicCardBackQuestion: [{
-    name: 'basicCardQuestionBack',
+    name: 'secondInputAnswer',
     message: 'what do you want on the back of the card ?',
     type: 'input'
   }],
 clozeCardFullQuestion : [{
-    name: 'clozeCardFullQuestion',
-    message: 'Please enter the question ?',
+    name: 'firstInputAnswer',
+    message: 'Please enter the full sentence?',
     type: 'input'
   }],
 clozeCardClozeQuestion: [{
-    name: 'clozeCardClozeQuestion',
-    message: 'Please enter the question ?',
+    name: 'secondInputAnswer',
+    message: 'Please enter the text that you want to hide ?',
     type: 'input'
   }],
 continueQuestion: [{
@@ -33,6 +33,6 @@ continueQuestion: [{
       message: 'Do you want to continue?',
       type: 'list',
       choices: ['Yes','No']
-      
+
   }]
 }
