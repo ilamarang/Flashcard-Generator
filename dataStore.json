@@ -31,5 +31,16 @@
     "text": "$100000 is the largest bill ever produced in the US",
     "cloze": "100000",
     "partial": "$..... is the largest bill ever produced in the US"
+  },
+  {
+    "front": "Who directed the movie 'Titanic'",
+    "back": "James Cameron",
+    "type": "Basic"
+  },
+  {
+    "type": "Cloze",
+    "text": "$200 has never been printed as legal tender",
+    "cloze": "200",
+    "partial": "$..... has never been printed as legal tender"
   }
 ]

@@ -5,7 +5,7 @@ if(text.indexOf(cloze)!= -1) {
   this.text = text;
   this.cloze = cloze;
   this.partial = text.replace(cloze,'.....');
-  console.log('Cloze Card Created');
+  console.log('Cloze Card Created!');
 }  else {
   console.log('Cloze not within the Text - Please create a valid input')
 }
