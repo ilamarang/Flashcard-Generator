@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/ilamarang/Flashcard-Generator#readme",
   "dependencies": {
+    "colors": "^1.1.2",
     "inquirer": "^3.1.0"
   }
 }

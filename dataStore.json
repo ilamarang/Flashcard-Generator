@@ -1,24 +1,35 @@
 [
   {
-    "text": "15 years",
-    "cloze": "15",
-    "partial": "..... years"
+    "front": "Who directed the movie 'Singing in the rain' ",
+    "back": "Donen & Kelly",
+    "type": "Basic"
+  },
+  {
+    "front": "Who directed the movie 'Modern times' ",
+    "back": "chaplin",
+    "type": "Basic"
+  },
+  {
+    "front": "Who directed the movie 'hugo'",
+    "back": "scorsese",
+    "type": "Basic"
   },
   {
     "type": "Cloze",
-    "text": "Ilamaran Gurunathan",
-    "cloze": "Ila",
-    "partial": ".....maran Gurunathan"
-  },
-
-  {
-    "front": "Who is the president of US",
-    "back": "Trump",
-    "type": "Basic"
+    "text": "There are 7 denominations of US dollar bills are currently being printed by the government",
+    "cloze": "7",
+    "partial": "There are ..... denominations of US dollar bills are currently being printed by the government"
   },
   {
-    "front": "Who is the p of US",
-    "back": "Bmmasd ",
-    "type": "Basic"
+    "type": "Cloze",
+    "text": "$100 is the largest US bill currently being printed",
+    "cloze": "100",
+    "partial": "$..... is the largest US bill currently being printed"
+  },
+  {
+    "type": "Cloze",
+    "text": "$100000 is the largest bill ever produced in the US",
+    "cloze": "100000",
+    "partial": "$..... is the largest bill ever produced in the US"
   }
 ]

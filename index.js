@@ -4,6 +4,7 @@ var questions = require('./questions.js');
 var basicCard = require('./basicCard.js');
 var clozeCard = require('./clozeCard.js');
 var dataStore = require('./dataStore.json');
+var colors = require('colors');
 var cardCount = 0;
 var flashCardArray = [];
 
@@ -56,7 +57,7 @@ var playFlashCard = function(cardType) {
 if (cardCount < flashCardArray.length)
 {
   card = flashCardArray[cardCount];
-  var systemQuestion = (cardType==='Basic') ? card.front: card.text;
+  var systemQuestion = (cardType==='Basic') ? card.front: card.partial;
   var systemAnswer = (cardType==='Basic') ? card.back: card.cloze;
   inquirer.prompt([
           {
@@ -65,12 +66,11 @@ if (cardCount < flashCardArray.length)
               name: 'userTypedAnswer'
           }
       ]).then(function (answer) {
-        console.log(answer.userTypedAnswer);
         if(answer.userTypedAnswer != systemAnswer) {
-          console.log('\u2717' + '  Wrong Answer!');
-          console.log('\u2713' + '  Correct Answer:  ' + systemAnswer)
+          console.log(colors.red('\u2717' + '  Wrong Answer!'));
+          console.log(colors.yellow('\u2713' + '  Correct Answer:  ' + systemAnswer));
         } else {
-          console.log("You are correct!")
+          console.log(colors.green('\u2713' +  '  You are correct!'));
         }
         cardCount +=1;
         playFlashCard(cardType);
