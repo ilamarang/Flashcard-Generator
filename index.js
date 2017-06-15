@@ -6,6 +6,8 @@ var basicCard = require('./basicCard.js');
 var clozeCard = require('./clozeCard.js');
 var dataStore = require('./dataStore.json');
 var colors = require('colors');
+var Table = require('cli-table');
+
 
 //Initialize Global variables to Track the game.
 var cardCount = 0;
@@ -36,9 +38,16 @@ var initialQuestions = function() {
                 getCards('All');
                 playFlashCard();
                 break;
+            case '6. Display Basic Cards':
+                displayCard('Basic');
+                break;
+            case '7. Display Cloze Cards':
+                displayCard('Cloze');
+                break;
             default:
                 //Write the choice to Log Writer and exit the game
                 console.log('Thanks for Playing!');
+                console.table(flashCardArray);
                 return;
         }
 
@@ -64,6 +73,30 @@ var getCards = function(cardType) {
 
     });
 
+}
+
+var displayCard = function(cardType) {
+  ;
+
+  var table = new Table({
+    head: ['Question', 'Answer']
+  , colWidths: [50, 20]
+});
+  dataStore.forEach(function(card, index) {
+    var displayArray = new Array(2);
+    if (card.type === cardType) {
+        if (card.type == 'Basic') {
+          displayArray[0] = card.front;
+          displayArray[1] = card.back;
+        } else {
+          displayArray[0] = card.partial;
+          displayArray[1] = card.cloze;
+        }
+
+        table.push(displayArray);
+    }
+  })
+  console.log(table.toString());
 }
 
 var playFlashCard = function() {
