@@ -12,25 +12,29 @@ var initialQuestions = function() {
       inquirer.prompt(questions.prompt.initialQuestions).then(function(answer) {
             //Make a decision based on the answer.
             switch (answer.startGameQuestions) {
-                case 'Create a Basic Card':
+                case '1. Create a Basic Card':
                     //Create a new Basic Card using the appropriate Constructor
                     createCard('Basic',questions.prompt.basicCardFrontQuestion,questions.prompt.basicCardBackQuestion,basicCard);
                     break;
-                case 'Create a Cloze Card':
+                case '2. Create a Cloze Card':
                         //Create a Cloze Card using the appropriate Constructor
                         createCard('Cloze',questions.prompt.clozeCardFullQuestion,questions.prompt.clozeCardClozeQuestion,clozeCard);
                         break;
-                 case 'Play using Basic Cards':
+                 case '3. Play with Basic Cards':
                         getCards('Basic');
-                        playFlashCard('Basic');
+                        playFlashCard();
                         break;
-                  case 'Play using Cloze Cards':
+                  case '4. Play with Cloze Cards':
                                getCards('Cloze');
-                               playFlashCard('Cloze');
+                               playFlashCard();
                                break;
+                  case '5. Play with Basic and Cloze cards':
+                                getCards('All');
+                                playFlashCard();
+                                break;
                 default:
                     //Write the choice to Log Writer and exit the game
-                    console.log('Poor Choice');
+                    console.log('Thanks for Playing!');
                     return;
             }
 
@@ -45,20 +49,27 @@ var getCards = function(cardType) {
   flashCardArray = [];
   cardCount = 0;
   dataStore.forEach(function(card,index) {
-    if(card.type===cardType) {
-        flashCardArray.push(card);
+    //Load all cards for Playing
+    if(cardType === 'All') {
+      flashCardArray.push(card);
+    } else {
+      //Load card type selected by the user.
+      if(card.type===cardType) {
+          flashCardArray.push(card);
+      }
     }
+
   });
 
 }
 
-var playFlashCard = function(cardType) {
+var playFlashCard = function() {
 
 if (cardCount < flashCardArray.length)
 {
   card = flashCardArray[cardCount];
-  var systemQuestion = (cardType==='Basic') ? card.front: card.partial;
-  var systemAnswer = (cardType==='Basic') ? card.back: card.cloze;
+  var systemQuestion = (card.type==='Basic') ? card.front: card.partial;
+  var systemAnswer = (card.type==='Basic') ? card.back: card.cloze;
   inquirer.prompt([
           {
               type: 'input',
@@ -73,8 +84,10 @@ if (cardCount < flashCardArray.length)
           console.log(colors.green('\u2713' +  '  You are correct!'));
         }
         cardCount +=1;
-        playFlashCard(cardType);
+        playFlashCard();
 })
+} else {
+  initialQuestions();
 }
 
 

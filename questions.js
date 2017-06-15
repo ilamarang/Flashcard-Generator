@@ -4,8 +4,8 @@ initialQuestions: [{
     name: 'startGameQuestions',
     message: 'Please select an option to start using this App',
     type: 'list',
-    choices: ['Create a Basic Card', 'Create a Cloze Card', 'Play using Basic Cards', 'Play using Cloze Cards',
-        'Mix Basic and Cloze', 'Display Cards', 'Shuffle All Cards', 'Quit Application'
+    choices: ['1. Create a Basic Card', '2. Create a Cloze Card', '3. Play with Basic Cards', '4. Play with Cloze Cards',
+        '5. Play with Basic and Cloze cards', '6. Display Cards', '7. Quit Application'
     ]
 }],
 basicCardFrontQuestion: [{
