@@ -50,7 +50,6 @@ var initialQuestions = function() {
                 return;
         }
 
-
     })
 
 }
@@ -77,9 +76,10 @@ var getCards = function(cardType) {
 var displayCard = function(cardType) {
   var table = new Table({
     head: ['Question', 'Answer']
-  , colWidths: [100, 20]
+  , colWidths: [70, 20]
 });
   dataStore.forEach(function(card, index) {
+    //Display two columns in the table based on the card type.
     var displayArray = new Array(2);
     if (card.type === cardType) {
         if (card.type == 'Basic') {
@@ -103,7 +103,7 @@ var playFlashCard = function() {
         card = flashCardArray[cardCount];
         var systemQuestion = (card.type === 'Basic') ? card.front : card.partial;
         var systemAnswer = (card.type === 'Basic') ? card.back : card.cloze;
-        //Promp user with the question based on the card selected.
+        //Prompt user with the question based on the card selected.
         inquirer.prompt([{
             type: 'input',
             message: systemQuestion,
@@ -134,7 +134,7 @@ var createCard = function(cardType, firstQuestion, secondQuestion, cardObject) {
             fs.writeFile('./dataStore.json', JSON.stringify(dataStore, null, 2), function(err) {
 
                 if (err) {
-                    //Write error to Log Writer
+                    //Write error to Console
                     console.log('An error occurred during the transaction')
                 } else {
                     inquirer.prompt(questions.prompt.continueQuestion).then(function(continueAnswer) {
@@ -151,5 +151,5 @@ var createCard = function(cardType, firstQuestion, secondQuestion, cardObject) {
 
     });
 }
-
+//Start the game and display all menu items
 initialQuestions();
