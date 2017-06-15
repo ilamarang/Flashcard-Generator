@@ -47,7 +47,6 @@ var initialQuestions = function() {
             default:
                 //Write the choice to Log Writer and exit the game
                 console.log('Thanks for Playing!');
-                console.table(flashCardArray);
                 return;
         }
 
@@ -76,11 +75,9 @@ var getCards = function(cardType) {
 }
 
 var displayCard = function(cardType) {
-  ;
-
   var table = new Table({
     head: ['Question', 'Answer']
-  , colWidths: [50, 20]
+  , colWidths: [100, 20]
 });
   dataStore.forEach(function(card, index) {
     var displayArray = new Array(2);
@@ -97,6 +94,7 @@ var displayCard = function(cardType) {
     }
   })
   console.log(table.toString());
+  initialQuestions();
 }
 
 var playFlashCard = function() {
